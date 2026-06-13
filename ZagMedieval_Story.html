@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval Story - Переезд</title>
+    
+    <!-- Подключение средневековых шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* === Базовые настройки === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #2a2115 0%, #0d0b09 100%);
+            color: #e0d5b7;
+            font-family: 'Cormorant Garamond', serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        /* === Виньетка для атмосферности === */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, transparent 30%, #000000 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* === SVG Фон === */
+        #bg-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* === Анимации === */
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { text-shadow: 0 0 10px #ff8c00, 0 0 20px #ff4500; }
+            50% { text-shadow: 0 0 20px #ff8c00, 0 0 40px #ff4500, 0 0 60px #ffd700; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Контент по центру === */
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 3rem 4rem;
+            background: rgba(13, 11, 9, 0.65);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+            box-shadow: 
+                0 0 40px rgba(0, 0, 0, 0.9), 
+                inset 0 0 30px rgba(212, 175, 55, 0.05);
+            backdrop-filter: blur(6px);
+            animation: fadeInUp 1.5s ease-out;
+            max-width: 90vw;
+        }
+
+        /* Декоративные уголки для рамки */
+        .content::before, .content::after {
+            content: '✦';
+            position: absolute;
+            color: #d4af37;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+        .content::before { top: 10px; left: 15px; }
+        .content::after { bottom: 10px; right: 15px; }
+
+        /* === Типографика === */
+        .medieval-font {            font-family: 'Cinzel Decorative', cursive;
+            color: #ffd700;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            display: inline-block;
+            animation: pulse-glow 3s infinite ease-in-out;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            color: #f0e6d2;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #c0a060;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        .link-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            animation: fadeInUp 1.5s ease-out 0.5s both;
+        }
+
+        .link-label {
+            font-size: 1.3rem;
+            color: #e0d5b7;
+            font-style: italic;
+        }
+
+        .game-link {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: #ffd700;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 2px;
+            background: rgba(212, 175, 55, 0.05);
+            transition: all 0.4s ease;
+            position: relative;            overflow: hidden;
+        }
+
+        .game-link::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .game-link:hover {
+            color: #fff;
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), inset 0 0 15px rgba(255, 215, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .game-link:hover::before {
+            left: 100%;
+        }
+
+        /* Адаптив для мобильных */
+        @media (max-width: 600px) {
+            .content {
+                padding: 2rem 1.5rem;
+                width: 95vw;
+            }
+            .content::before, .content::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SVG Фон с магическим кругом -->
+    <svg id="bg-svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+        </defs>
+        
+        <!-- Вращающийся магический круг -->
+        <g id="magic-circle" style="transform-origin: 500px 500px; animation: rotate 80s linear infinite;">
+            <circle cx="500" cy="500" r="300" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.2" filter="url(#glow)" />
+            <circle cx="500" cy="500" r="340" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.15" stroke-dasharray="20, 15" />            <circle cx="500" cy="500" r="260" fill="none" stroke="#ff8c00" stroke-width="1" opacity="0.15" stroke-dasharray="10, 25" />
+            
+            <!-- Геометрические рунические элементы -->
+            <path d="M 500 120 L 880 780 L 120 780 Z" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.1" />
+            <path d="M 500 880 L 120 220 L 880 220 Z" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.1" />
+            <rect x="320" y="320" width="360" height="360" fill="none" stroke="#ff8c00" stroke-width="1" opacity="0.1" transform="rotate(45, 500, 500)" />
+        </g>
+    </svg>
+
+    <!-- Основной контент -->
+    <div class="content">
+        <h1>
+            <span class="medieval-font">Medieval Story</span><br>
+            переехала Meander!
+        </h1>
+        <p class="subtitle">Доступно в Web и на андроид!</p>
+        
+        <div class="link-box">
+            <span class="link-label">Ссылка на игру:</span>
+            <!-- Замените href на реальную ссылку -->
+            <a href="https://meander.game/medieval-story" class="game-link" target="_blank">
+                meander.game/medieval-story
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // === JS Анимация парящих искр (эмберов) ===
+        const svg = document.getElementById('bg-svg');
+
+        function createEmber() {
+            const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            
+            // Случайные параметры для каждой искры
+            const x = Math.random() * window.innerWidth;
+            const size = Math.random() * 3 + 1;
+            const duration = Math.random() * 4000 + 3000; // от 3 до 7 секунд
+            const color = Math.random() > 0.6 ? "#ffaa00" : "#ff4500"; // Золотой или огненно-красный
+            
+            circle.setAttribute("cx", x);
+            circle.setAttribute("cy", window.innerHeight + 10);
+            circle.setAttribute("r", size);
+            circle.setAttribute("fill", color);
+            circle.setAttribute("opacity", "0.8");
+            circle.style.filter = "url(#glow)";
+            
+            svg.appendChild(circle);
+            
+            // Случайное отклонение по оси X во время полета
+            const destX = x + (Math.random() - 0.5) * 150;            
+            // Анимация через Web Animations API (высокая производительность)
+            const anim = circle.animate([
+                { cy: window.innerHeight + 10, opacity: 0.8, cx: x },
+                { cy: -20, opacity: 0, cx: destX }
+            ], {
+                duration: duration,
+                easing: 'linear'
+            });
+            
+            // Удаляем элемент из DOM после завершения анимации для предотвращения утечек памяти
+            anim.onfinish = () => {
+                circle.remove();
+            };
+        }
+
+        // Создаем новую искру каждые 120 мс
+        setInterval(createEmber, 120);
+
+        // Создаем несколько искр сразу при загрузке, чтобы не ждать
+        for(let i = 0; i < 15; i++) {
+            setTimeout(createEmber, i * 100);
+        }
+    </script>
+</body>
+</html>
