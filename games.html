@@ -1,675 +1,227 @@
-<!doctype html>
-    <html class="no-js" lang="zxx">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>FAT ANIME ИГРЫ</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
-        <link rel="manifest" href="img/logo/site.webmanifest">
-        <link rel="mask-icon" href="img/logo/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-        <link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
+<!DOCTYPE html>
+<html lang="ru">
 
-        <!-- Bootstrap CSS, Fancybox CSS
-            ============================================ -->        
-            <link rel="stylesheet" href="css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"/>
-        <!-- et-line-fonts
-            ============================================ -->
-            <link rel="stylesheet" href="css/et-line-fonts.css">
-        <!-- font-awesome
-            ============================================ -->
-            <link rel="stylesheet" href="css/font-awesome.min.css">
-        <!-- animate CSS
-            ============================================ -->
-            <link rel="stylesheet" href="css/animate.css">
-        <!-- owl.carousel CSS
-            ============================================ -->
-            <link rel="stylesheet" href="css/owl.carousel.css">
-        <!-- magnific-popup CSS
-            ============================================ -->
-            <link rel="stylesheet" href="css/magnific-popup.css">
-        <!-- normalize CSS
-            ============================================ -->
-            <link rel="stylesheet" href="css/normalize.css">
-        <!-- main CSS
-            ============================================ -->
-            <link rel="stylesheet" href="css/main.css">
-        <!-- montserrat font
-            ============================================ -->
-            <link rel="stylesheet" href="css/montserrat.css">
-        <!-- style CSS
-            ============================================ -->
-            <link rel="stylesheet" href="style.css">
-        <!-- responsive CSS
-            ============================================ -->
-            <link rel="stylesheet" href="css/responsive.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAT ANIME</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"/>
+    <link href="styles.css" rel="stylesheet" />
+    <!-- Удалён jquery.fsscroll.css, так как fullpage больше не используется -->
+</head>
 
-        <!-- modernizr JS
-            ============================================ -->        
-            <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<body>
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <img src="./img/preloader.gif">
+            <h1>LOADING...</h1>
+        </div>
+    </div>
+    <!-- ========== STICKY MENU (sticky-top) ========== -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold navbar-logo" href="https://vk.com/fatanime" target="_blank">FAGFG</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto navbar-menu">
+                    <li class="nav-item navbar-menu__item">
+                        <a class="nav-link navbar-menu__item-link" href="https://fatanime.github.io/index.html">ГЛАВНАЯ</a>
+                    </li>
+                    <li class="nav-item navbar-menu__item">
+                        <a class="nav-link navbar-menu__item-link" href="#gameslist">СПИСОК</a>
+                    </li>
+                    <li class="nav-item navbar-menu__item">
+                        <a class="nav-link navbar-menu__item-link" href="#contacts">КОНТАКТЫ</a>
+                    </li>
+                    <li class="nav-item navbar-menu__item">
+                        <a class="nav-link active navbar-menu__item-link language-btn language-btn--active"
+                            href="#">RUS</a>
+                    </li>
+                    <li class="nav-item navbar-menu__item">
+                        <a class="nav-link navbar-menu__item-link language-btn" href="https://fatanime.github.io/en_games.html">EN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-            <!-- Yandex.Metrika counter -->
-            <script type="text/javascript" >
-             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                 m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <!-- ========== CAROUSEL SECTION ========== -->
+    <section id="main" class="carousel slide draggable section game_section" data-bs-ride="carousel"
+        data-bs-touch="false" data-interval="3000" data-anchor="block1">
+        <!-- INDICATORS -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Слайд 1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Слайд 3"></button>
+        </div>
 
-             ym(57597559, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true,
-                webvisor:true
-            });
-        </script>
-        <noscript>
-            <div><img src="https://mc.yandex.ru/watch/57597559" style="position:absolute; left:-9999px;" alt="" /></div>
-        </noscript>
-        <!-- /Yandex.Metrika counter -->
-    </head>
-    <body>
-        <!-- Add your site or application content here -->
-        <div class="wrapper">
-            <!-- Header Area
-                ============================================ -->
-                <header class="header-area sticker">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                             <div class="navbar-header">
-                              <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" >
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
+        <!-- SLIDES -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="img-fluid" src="./img/games/games_slider/1.jpg" alt="Первый слайд" />
+                <div class="carousel-caption carousel-item__caption">
+                    <h1 class="carousel-item__title">Подборка игр</h1>
+                    <p class="carousel-item__decription">РПГ квесты и аркадного типа</p>
+                    <a type="button" class="btn carousel-item__button" href="#gameslist">Смотреть</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid" src="./img/games/games_slider/2.jpg" alt="Второй слайд" />
+                <div class="carousel-caption carousel-item__caption">
+                    <h1 class="carousel-item__title">Фан игры</h1>
+                    <p class="carousel-item__decription">по любимым фандомам с полными героями</p>
+                    <a type="button" class="btn carousel-item__button" href="#gameslist">Смотреть</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid" src="./img/games/games_slider/3.jpg" alt="Третий слайд" />
+                <div class="carousel-caption carousel-item__caption">
+                    <h1 class="carousel-item__title">Инди проекты</h1>
+                    <p class="carousel-item__decription">с оригинальной задумкой и красивой графикой</p>
+                    <a type="button" class="btn carousel-item__button" href="#gameslist">Смотреть</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTROL BUTTONS -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </section>
+
+    <!-- ========== БЛОК СПИСОК ИГР ========== -->
+    <section id="gameslist" class="game_section gameslist">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-12 col-md-12">
+                    <div class="gameslist-item">
+                        <h2 class="gameslist-title">Коллекция Игр</h2>
+                        <h5 class="gameslist-description">Выбирайте подходящие для вас игры при помощи
+                            фильтра.<br><b>Все игры на английском языке!</b></h5>
+                        <h5 class="gameslist-description">Чтобы посмотреть описание и скачать игру, нажмите на ее
+                            карточку!</h5>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12">
+                    <!-- ===== ПОИСКОВАЯ СТРОКА ===== -->
+                    <div class="search-container text-center mb-4">
+                        <div class="search-wrapper" style="max-width: 500px; margin: 0 auto; position: relative;">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Поиск по названию..." style="padding-right: 45px;">
+                            <button id="searchButton" style="position: absolute; right: 0; top: 0; height: 100%; background: transparent; border: none; padding: 0 15px; color: #6c757d; z-index: 5;">
+                                <i class="fas fa-search"></i>
                             </button>
-                            <a class="navbar-brand logo" href="https://vk.com/fatanime" target="_blank" title="Наша группа в ВК">FAGFG</a>
-                        </div>
-                        <div class="main-menu float-right collapse navbar-collapse" id="main-menu">
-                            <nav>
-                                <ul>
-                                    <li><a href="index.html">ГЛАВНАЯ</a></li>
-                                    <li><a href="#games-list">СПИСОК</a></li>
-                                    <li><a href="#contact-area">КОНТАКТЫ</a></li>
-                                    <li><b>РУС</b></li>
-                                    <li><a href="en_games.html">EN</a></li>
-                                </ul>
-                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-            <!-- СЛАЙДЕР
-                ============================================ -->
-                <div id="home-area" class="slider-area">
-                    <div class="slider-active">
-                        <div class="single-slider">
-                            <div class="slide-bg height-100vh" style="background-image: url(img/games/slider/1.jpg);"></div>
-                            <div class="slider-title">
-                                <h2>сборник игр</h2>
-                                <p>с интересным сюжетом или аркадного типа</p>
-                                <a class="scroll-down" href="#games-list">Смотреть</a>
+            <!-- ===== ФИЛЬТР ===== -->
+            <div class="filter-buttons text-center mb-4">
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all">ВСЕ ИГРЫ</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="short">Короткие игры</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="long">Длинные игры</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="arcade">Аркады и казуал</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="rpg">РПГ и квесты</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="fan">Фан версии игр</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="original">Оригинальные</button>
+            </div>
+            <!-- ===== КАРТОЧКИ ===== -->
+            <div class="row g-4" id="gamesGrid">
+                <!-- Карточки будут добавлены через JS -->
+            </div>
+            <!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
+            <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 pb-0">
+                            <h4 class="modal-title w-100 text-center" id="gameModalLabel">Название игры</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Закрыть"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-4">
+                                <div class="col-12 col-md-6">
+                                    <a id="modallinkImage" href="" data-fancybox="gallery" data-caption="">
+                                        <img id="modalImage" src="" alt="Изображение игры" class="img-fluid rounded w-100" />
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <p id="modalDescription" class="mb-3">Описание игры</p>
+                                    <p><strong>Автор:</strong> <span id="modalAuthor"></span></p>
+                                    <p><strong>Платформа:</strong> <span id="modalPlatform"></span></p>
+                                    <p><strong>Год выхода:</strong> <span id="modalYear"></span></p>
+                                    <p><strong>Жанры:</strong> <span id="modalGenres"></span></p>
+                                    <a id="modalDownloadLink" href="#" target="_blank"
+                                        class="btn game-button mt-3">Скачать</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="single-slider">
-                            <div class="slide-bg height-100vh" style="background-image: url(img/games/slider/2.jpg);"></div>
-                            <div class="slider-title">
-                                <h2>Фан игры</h2>
-                                <p>по любимым фандомам, но с полными персонажами</p>
-                                <a class="scroll-down" href="#games-list">Смотреть</a>
-                            </div>
-                        </div>
-                        <div class="single-slider">
-                            <div class="slide-bg height-100vh" style="background-image: url(img/games/slider/3.jpg);"></div>
-                            <div class="slider-title">
-                                <h2>Инди проекты</h2>
-                                <p>с оригинальной задумкой и красивой графикой</p>
-                                <a class="scroll-down" href="#games-list">Смотреть</a>
-                            </div>
-                        </div>                   
                     </div>
                 </div>
-                <!--CПИСОК ИГР-->
-                <div id="games-list" class="contact-area pt-90 gray-bg">
-                    <div class="container">
-                        <div class="col-md-12 text-center">
-                            <div class="section-title">
-                                <h2>Сборник игр</h2>
-                                <p style="font-size: 18px;">Выбирайте подходящие для вас игры при помощи фильтра.</p>
-                                <p style="font-size: 20px;"><b>Все игры на английском языке!</b></p>
-                                <p style="font-size: 18px;">Описание можно посмотреть нажав на карточку!</p>
-                            </div>
-                        </div>
-                        <div align="center">
-                            <button class="filter-button active" data-filter="all"><b>ВСЕ</b></button>
-                            <button class="filter-button" data-filter="Short">Короткие игры</button>
-                            <button class="filter-button" data-filter="Long">Длинные игры</button>
-                            <button class="filter-button" data-filter="Arcade">Аркады и казуал</button>
-                            <button class="filter-button" data-filter="RPG">РПГ и квесты</button>
-                            <button class="filter-button" data-filter="Fangame">Фан версии игр</button>
-                            <button class="filter-button" data-filter="Original">Оригинальные</button>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <div class="cards">
-                                    <div class="filter Short Arcade Original card-container">
-                                        <div class="card card-1">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img class="card__image" src="img/games/fattening.jpg" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Fattening</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description"> Вы попадаете в дом с призраком. Но не совсем обычным... Ваша задача выжить и пройти весь сюжет до конца.</p>
-                                                <p><a href="https://disk.yandex.ru/d/eSH_izgeYLNTrg" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="filter Short Arcade Original card-container">
-                                        <div class="card card-2">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img class="card__image" src="img/games/star.jpg" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Star Meadow</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description">Соберите все звездочки, не дав себя поймать. Но помните, что чем больше звезд вы соберете - тем сложнее будет идти.</p>
-                                                <p><a href="https://disk.yandex.ru/d/CvAYr4x9P7MdcA" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="filter Short Arcade Original card-container">
-                                        <div class="card card-3">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img class="card__image" src="img/games/WalkwithFrogWife.jpg" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Walk with Frog Wife</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description">Ковбой Дикого Запада и его жена человеколягушка. А еще она тянет в рот все что попадается под руку, так что ваша задача убирать с ее пути все, что не является насекомым.</p>
-                                                <p><a href="https://disk.yandex.ru/d/XLyULHflJ_SwXg" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="filter Long Arcade Original card-container">
-                                        <div class="card card-4">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/SpaceEaterForce.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Space Eater Force</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description"> Космический шутер, где из подбитых вражеских кораблей выпадают булочки. Вам предстоит плавно раскормить главную героиню в одиночку или раскормить еще и ее подруг.</p>
-                                                <p><a href="https://disk.yandex.ru/d/RjTnp2YWCa9cBw" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div> 
-
-                                    <div class="filter Short Arcade Original card-container">
-                                        <div class="card card-5">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/FattFatt.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">FattFatt</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description"> Главная героиня попадает в мир, целиком и полностью состоящий из еды. Ее задача - выбраться оттуда и нерастолстеть до предела...</p>
-                                                <p><a href="https://disk.yandex.ru/d/d0F7bu_KzXyyOw" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="filter Short Arcade Original card-container">
-                                        <div class="card card-6">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/FeedingLila.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Feeding Lila</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description"> Лила попала в лапы монстра, заставляющего ее набирать вес в считанные секунды. Ваша задача балансировать между показателями, не давая им переполняться время от времени.</p>
-                                                <p><a href="https://disk.yandex.ru/d/NQ1b7ilYeHUQow" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="filter Short Arcade RPG Original card-container">
-                                        <div class="card card-7">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/CulinaryCombat.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Culinary Combat</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description"> Некто по имени Мисс Тарабан получает приглашение на должность повара. Говорят, что все дело в ее сверх калорийной еде...</p>
-                                                <p><a href="https://disk.yandex.ru/d/LytOO_Fg4fwrJg" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div>   
-
-                                    <div class="filter Short RPG Original card-container">
-                                        <div class="card card-8">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/FoodFighterHansaGJB.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Food Fighter Hansa GJB</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description"> Вы - фея Ханса и ваша задача успеть на фестиваль. Но вот беда, волшебный лес наводнили гоблины. Хорошо, что любимая клубника в избытке, правда от нее Ханса быстро набирает вес...</p>
-                                                <p><a href="https://yadi.sk/d/njxt0xPrF0b8Aw" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div>  
-
-                                    <div class="filter Short Arcade Original card-container">
-                                        <div class="card card-9">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/Amoeblaster.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Amoeblaster</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description">Собирайте четыре в ряд и грудь персонажа будет расти - все просто! Главное не сбиваться из-за растущего ритма и сложности.</p>
-                                                <p><a href="https://yadi.sk/d/uLb8F-70tZu-gQ" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div> 
-
-                                    <div class="filter Long RPG Fangame card-container">
-                                        <div class="card card-10">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/FNWF.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Five Nights with fatties</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description">Пародия на FNAF, но вместо привычных аниматроников полные женоподобные роботы...</p>
-                                                <p><a href="https://disk.yandex.ru/d/5hWipbYPOVPdnA" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="filter Short Arcade Original card-container">
-                                        <div class="card card-11">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/LickitySplit.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Lickity Split</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description">Вы - мороженщик, но ваш продукт имеет интересную особенность: от него быстро набираешь вес.</p>
-                                                <p><a href="https://disk.yandex.ru/d/IIdoBBI4Qururw" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div> 
-
-                                    <div class="filter Short Arcade Original card-container">
-                                        <div class="card card-12">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/FeedtheCrown.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Feed the Crown</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description"> Вы простой рыцарь, удостоенный чести в течении трех дней после непростых вылазок в вражеский замок кормить королеву найденной едой. Чем больше еды вы принесете, тем толще она станет...</p>
-                                                <p><a href="https://disk.yandex.ru/d/sI-qwrsmw8vNHQ" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                            </div>
-                                        </div>
-                                    </div> 
-
-                                    <div class="filter Long RPG Original card-container">
-                                        <div class="card card-13">
-                                            <div class="front--card">
-                                                <div class="card--block">
-                                                    <img src="img/games/BabyFatGames.jpg" class="card__image" alt="">
-                                                    <div class="card__thumb">
-                                                        <h3 class="card__title">Baby Fat Games 18+</h3>
-                                                        <h5 class="card__tagline">Windows</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="back--card">
-                                                <h5 class="card__tagline card__description--name">Описание</h5>
-                                                <p class="card__description"> Вы - безымянный герой, который был нанят нянькой для Зои ее матерью... Зоя весьма необычная девушка, о чем вы скоро сами поймете...</br>
-                                                    <i>Скачивая этот набор игр, вы подтверждаете, что вам исполнилось 18 лет!</i></p>
-                                                    <p><a href="https://disk.yandex.ru/d/dopeUvoJvE-pDQ" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                </div>
-                                            </div>
-                                        </div>   
-
-                                        <div class="filter Short Arcade Original card-container">
-                                            <div class="card card-14">
-                                                <div class="front--card">
-                                                    <div class="card--block">
-                                                        <img src="img/games/YulitideSophia.jpg" class="card__image" alt="">
-                                                        <div class="card__thumb">
-                                                            <h3 class="card__title">Yulitide Sophia</h3>
-                                                            <h5 class="card__tagline">Windows</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="back--card">
-                                                    <h5 class="card__tagline card__description--name">Описание</h5>
-                                                    <p class="card__description">Тетрис с элементами набора веса. Больше счет - больше живот!</p>
-                                                    <p><a href="https://disk.yandex.ru/d/0fpYILQyhc5PQQ" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                </div>
-                                            </div>
-                                        </div>   
-
-                                        <div class="filter Short Arcade Original card-container">
-                                            <div class="card card-15">
-                                                <div class="front--card">
-                                                    <div class="card--block">
-                                                        <img src="img/games/Loveatfirstbite.jpg" class="card__image" alt="">
-                                                        <div class="card__thumb">
-                                                            <h3 class="card__title">Love at first bite 18+</h3>
-                                                            <h5 class="card__tagline">Windows</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="back--card">
-                                                    <h5 class="card__tagline card__description--name">Описание</h5>
-                                                    <p class="card__description"> Шарлотта влюблена в Кармен: девушку выразительных форм. Как с неба полетели шоколадки. Поймай их всех!</br>
-                                                    <i>Скачивая эту игру, вы подтверждаете, что вам исполнилось 18 лет!</i></p>
-                                                    <p><a href="https://disk.yandex.ru/d/DGxy7eMzixPVVg" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                    </div>
-                                                </div>
-                                            </div>  
-
-                                            <div class="filter Short Arcade Original card-container">
-                                                <div class="card card-16">
-                                                    <div class="front--card">
-                                                        <div class="card--block">
-                                                            <img src="img/games/OverstuffedOvertime.jpg" class="card__image" alt="">
-                                                            <div class="card__thumb">
-                                                                <h3 class="card__title">Overstuffed overtime</h3>
-                                                                <h5 class="card__tagline">Windows</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back--card">
-                                                        <h5 class="card__tagline card__description--name">Описание</h5>
-                                                        <p class="card__description">Вы работаете на фабрике, превращающей желе с помощью машины вкусов в съедобную вкусность. Рутина подходит к концу, когда к вам наведывается стажер, которую вы решаетесь накормить...</p>
-                                                        <p><a href="https://disk.yandex.ru/d/LyXgPu6K5uHVlQ" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="filter Short Arcade Fangame card-container">
-                                                <div class="card card-17">
-                                                    <div class="front--card">
-                                                        <div class="card--block">
-                                                            <img src="img/games/Fattaker.jpg" class="card__image" alt="">
-                                                            <div class="card__thumb">
-                                                                <h3 class="card__title">Fattaker</h3>
-                                                                <h5 class="card__tagline">Windows</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back--card">
-                                                        <h5 class="card__tagline card__description--name">Описание</h5>
-                                                        <p class="card__description">Вы мечтаете о гореме из роскошных полных дьяволиц.
-                                                        Пройдите сложные головоломки, подбирайте правильно слова и следите, как ваша дьяволица растет как на дрожах!</p>
-                                                        <p><a href="https://disk.yandex.ru/d/EfZPcESw9YGVSQ" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="filter Long RPG Original card-container">
-                                                <div class="card card-18">
-                                                    <div class="front--card">
-                                                        <div class="card--block">
-                                                            <img src="img/games/FantasyFeeder.jpg" class="card__image" alt="">
-                                                            <div class="card__thumb">
-                                                                <h3 class="card__title">Feeder Fantasy</h3>
-                                                                <h5 class="card__tagline">Windows</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back--card">
-                                                        <h5 class="card__tagline card__description--name">Описание</h5>
-                                                        <p class="card__description">Вы эльфийка, мечтающая раскормить добрую половину города, зная секреты "Ауры набора веса". Впрочем, в этом стремлении вы будете не одиноки.<br> <i>Знание английского необходимо!</i></p>
-                                                        <p><a href="https://disk.yandex.ru/d/OM3irWOs1PYgAg" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="filter Short Arcade Original card-container">
-                                                <div class="card card-19">
-                                                    <div class="front--card">
-                                                        <div class="card--block">
-                                                            <img src="img/games/LuciferPancakes.jpg" class="card__image" alt="">
-                                                            <div class="card__thumb">
-                                                                <h3 class="card__title"> LuciferPancakes</h3>
-                                                                <h5 class="card__tagline">Windows</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back--card">
-                                                        <h5 class="card__tagline card__description--name">Описание</h5>
-                                                        <p class="card__description">Кормите демона блинчиками и следите за растущим животом. Избегайте огоньков!</p>
-                                                        <p><a href="https://disk.yandex.ru/d/8pto7uCpIeS7Fw" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="filter Short Arcade Original card-container">
-                                                <div class="card card-20">
-                                                    <div class="front--card">
-                                                        <div class="card--block">
-                                                            <img src="img/games/MsDumplingDelivery.jpg" class="card__image" alt="">
-                                                            <div class="card__thumb">
-                                                                <h3 class="card__title"> MsDumplingDelivery</h3>
-                                                                <h5 class="card__tagline">Windows</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back--card">
-                                                        <h5 class="card__tagline card__description--name">Описание</h5>
-                                                        <p class="card__description">Вы играете за милую пышку - курьера. Пройдите через множество препятствий и доставьте заказ!</p>
-                                                        <p><a href="https://disk.yandex.ru/d/JzZbHGXmegzAdg" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="filter Long RPG Fangame card-container">
-                                                <div class="card card-21">
-                                                    <div class="front--card">
-                                                        <div class="card--block">
-                                                            <img src="img/games/DDLC.jpg" class="card__image" alt="">
-                                                            <div class="card__thumb">
-                                                                <h3 class="card__title">DDLC - Monika's Special Day</h3>
-                                                                <h5 class="card__tagline">Windows</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back--card">
-                                                        <h5 class="card__tagline card__description--name">Описание</h5>
-                                                        <p class="card__description">Фан версия игры DDLC, только с полненькой Моникой, приятной озвучкой в знакомом сеттинге!</p>
-                                                        <p><a href="https://disk.yandex.ru/d/zJmqFOfEyGc2tg" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="filter Long RPG Original card-container">
-                                                <div class="card card-22">
-                                                    <div class="front--card">
-                                                        <div class="card--block">
-                                                            <img src="img/games/the_sultans_harem.jpg" class="card__image" alt="">
-                                                            <div class="card__thumb">
-                                                                <h3 class="card__title">The Sultans Harem</h3>
-                                                                <h5 class="card__tagline">Windows, Linux, Android, Apple</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="back--card">
-                                                        <h5 class="card__tagline card__description--name">Описание</h5>
-                                                        <p class="card__description">В этой игре вы будете султаном арабского королевства.</p>
-                                                        <p><a href="https://livegoeson.itch.io/the-sultans-harem" target="_blank" tabindex="0" class="button3"><span>СКАЧАТЬ</span></a></p>
-                                                    </div>
-                                                </div>
-                                            </div>             
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="contact-area" class="contact-area pt-90 pb-70 bg-img-3">
-                            <div class="container">
-                             <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <div class="section-title">
-                                        <h2>Связаться с создателем сайта</h2>
-                                        <p style="font-size: 18px;">Есть вопросы? Идеи? Предложения? <br>Пишите!</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12">
-                                    <div class="single-contact-option text-center nn-mrg">
-                                        <a href="mailto:fatanime@yandex.ru"><i class="fa fa-envelope icon-mail"></i></a>
-                                        <h4>Написать письмо</h4>
-                                        <a href="mailto:fatanime@yandex.ru" style="font-size: 
-                                        20px;">fatanime@yandex.ru</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <footer class="footer-area black-bg ptb-95">
-                        <div class="container">
-                            <div class="row">
-                             <div class="col-md-12 text-center">
-                                <div class="footer-logo-address">
-                                    <div class="footer-logo" style="margin-top: 10px;">
-                                        <a href="https://vk.com/fatanime" target="_blank" style="font-size: 20px;">FAGFG</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <div class="footer-text">
-                                    <div class="social-icon mt-20">
-                                        <a href="https://vk.com/fatanime">
-                                            <i class="fa fa-vk"></i>
-                                        </a>
-                                    </div>
-                                    <p style="font-size: 16px;">Copyright © 2015 - 2026 <a href="https://vk.com/fatanime">FAT ANIME</a>.<br> All Rights Reserved.</p>
-                                    <p style="font-size: 11px;">В качестве примеров в слайдере использованы скриншоты из игр. Вся информация изложена в описании</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
+        </div>
+    </section>
 
+    <!-- ========== БЛОК КОНТАКТЫ ========== -->
+    <section id="contacts" class="game_section bg-light contacts">
+        <div class="container pt-5">
+            <div class="row g-4">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <h2 class="contacts-title">Связаться с создателем сайта</h2>
+                    <p class="contacts-description">Есть вопросы? Идеи? Предложения? Пишите!</p>
+                    <a type="button" class="btn contacts-button" href="mailto:fatanime@yandex.ru"
+                        target="_blank">Написать админу на почту</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container pt-5">
+            <div class="row g-4">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="footer-top">
+                        <a class="footer-top--logo" href="https://vk.com/fatanime" target="_blank">FAGFG</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="footer-bottom">
+                        <a class="footer-bottom--link" href="https://vk.com/fatanime">
+                            <i class="fa fa-vk"></i>
+                        </a>
+                        <p class="footer-bottom--copyright">Copyright © <span id="startYear"></span> - <span
+                                id="currentYear"></span> <a href="https://vk.com/fatanime">FAT ANIME</a>.<br>
+                            All Rights Reserved.</p>
+                        <p class="footer-bottom--artists">В качестве примеров в слайдере использованы кадры из игр</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <!-- ========== JS ========== -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./scripts/parallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts_games.js"></script>
+</body>
 
-
-        <!-- jquery
-            ============================================ -->        
-            <script src="js/vendor/jquery-1.12.0.min.js"></script>
-        <!-- bootstrap JS, Fancybox
-            ============================================ -->        
-            <script src="js/bootstrap.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <!-- plugins JS
-            ============================================ -->    
-            <script>
-                $(document).ready(function(){
-                    $('.customer-logos').slick({
-                        slidesToShow: 6,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        autoplaySpeed: 1500,
-                        arrows: false,
-                        dots: false,
-                        pauseOnHover: false,
-                        responsive: [{
-                            breakpoint: 768,
-                            settings: {
-                                slidesToShow: 4
-                            }
-                        }, {
-                            breakpoint: 520,
-                            settings: {
-                                slidesToShow: 3
-                            }
-                        }]
-                    });
-                });
-
-            </script>
-            <script src="js/plugins.js"></script>
-        <!-- main JS
-            ============================================ -->        
-            <script src="js/main.js"></script>
-        </body>
-        </html>
+</html>

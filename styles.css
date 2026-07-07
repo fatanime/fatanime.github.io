@@ -1,0 +1,1091 @@
+/*
+DEVELOPER: websites.developer@atomicmail.io
+*/
+/*----------------------------------------*/
+/*  1. DEFAULT
+/*----------------------------------------*/
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+    font-family: "v_CCMeanwhile";
+    src: url(fonts/Meanwhile.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* default styles */
+h1,
+h2,
+h3,
+h4 {
+    font-family: "v_CCMeanwhile";
+}
+p,
+span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+.section {
+    height: 100vh;
+}
+/*----------------------------------------*/
+/*  5. PRELOADER
+/*----------------------------------------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a; /* тёмный фон */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+#preloader .preloader-content {
+    text-align: center;
+    color: #fff;
+}
+#preloader .preloader-content .fa-hourglass-half {
+    color: #e73333;
+    margin-bottom: 20px;
+}
+#preloader .preloader-content h1 {
+    font-family: "v_CCMeanwhile", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(231, 51, 51, 0.5);
+}
+/* Когда прелоадер скрыт */
+#preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+/*----------------------------------------*/
+/*  2. HEADER
+/*----------------------------------------*/
+.navbar {
+    left: 0;
+    padding: 10px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+.bg-body-tertiary {
+    --bs-bg-opacity: 0.2;
+}
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.navbar-toggler-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 4px;
+    transition: all 0.3s;
+}
+
+.navbar-toggler.active .navbar-toggler-icon {
+    transform: rotate(45deg);
+}
+.navbar-toggler.active .navbar-toggler-icon:nth-child(1) {
+    transform-origin: 6px 8px;
+}
+.navbar-toggler.active .navbar-toggler-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.active .navbar-toggler-icon:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: 7px -4px;
+}
+.navbar.navbar--scroll {
+    opacity: 1;
+    position: fixed;
+}
+.navbar--scroll.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: black !important;
+}
+.navbar-logo {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+.navbar-logo:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: rgb(
+        182,
+        166,
+        226
+    ); /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+.navbar-logo:hover {
+    color: white;
+}
+.navbar--scroll > .container > .navbar-logo {
+    color: white;
+}
+.navbar-logo:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px; /* Высота линии */
+    background-color: rgb(
+        187,
+        172,
+        231
+    ); /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+.navbar-menu__item-link {
+    color: white;
+    line-height: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.navbar-menu__item-link:focus{
+    color:white;
+}
+.navbar-menu__item-link.active {
+    color: white !important;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: white;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: auto;
+    -moz-text-decoration-color: white;
+}
+.navbar-menu__item-link:hover {
+    color: #828297; /* Меняем цвет текста */
+    -webkit-text-shadow: 2px 2px 2px #000;
+    -moz-text-shadow: 2px 2px 2px #000;
+    text-shadow: 2px 2px 2px #000;
+}
+.language-btn--active {
+    color: white !important;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: #e73333;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: auto;
+    -moz-text-decoration-color: #e73333;
+}
+.language-btn:hover {
+    color: #e73333; /* Меняем цвет текста */
+    -webkit-text-shadow: 2px 2px 2px #000;
+    -moz-text-shadow: 2px 2px 2px #000;
+    text-shadow: 2px 2px 2px #000;
+}
+.navbar-menu__item-link--scroll {
+    color: white;
+}
+.navbar-menu__item-link--scroll.active {
+    color: white !important;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: white;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: auto;
+    -moz-text-decoration-color: white;
+}
+.navbar-menu__item-link--scroll.language-btn.active {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: #e73333;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: auto;
+    -moz-text-decoration-color: #e73333;
+}
+.navbar-menu__item-link--scroll.language-btn.active:hover {
+    color: #e73333 !important; /* Меняем цвет текста */
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: #e73333;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: auto;
+    -moz-text-decoration-color: #e73333;
+}
+/*----------------------------------------*/
+/*  3. SCREEN CAROUSEL
+/*----------------------------------------*/
+.carousel,
+.carousel-inner,
+.carousel-item {
+    height: 100vh;
+    cursor: pointer;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* заполняет контейнер, обрезая края */
+}
+.carousel-item__title {
+    font-size: 50px;
+    margin: 10px;
+}
+.carousel-item__decription {
+    font-size: 20px;
+}
+/* Чтобы текст внутри карусели был контрастным (опционально) */
+.carousel-item__caption {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+    top: 38%;
+}
+.carousel-item__button {
+    color: #fff;
+    transition: all 0.5s;
+    position: relative;
+    font-size: 22px;
+    border: 1px solid rgba(59, 59, 59, 0.2);
+}
+.carousel-item__button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+.carousel-item__button:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+.carousel-item__button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.2, 1.2);
+}
+.carousel-item__button:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+/*----------------------------------------*/
+/*  4. ABOUT
+/*----------------------------------------*/
+#about {
+    padding: 20px 0;
+    height: 100vh;
+}
+.about__description {
+    line-height: 1.8;
+    padding: 0 0 10px 0;
+    font-size: 16px;
+}
+/*----------------------------------------*/
+/*  5. INFO
+/*----------------------------------------*/
+#info {
+    background-image: url("./img/parallax.jpg");
+    display: flex; /* Делаем контейнер flex-контейнером */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+}
+.counter-item {
+    text-align: center;
+    padding: 30px 20px;
+    /* Прозрачный фон (альфа-канал 0.3) */
+    background-color: rgba(248, 249, 250, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+.counter-item:hover {
+    transform: translateY(-5px);
+}
+/* Иконка над словом "БОЛЕЕ" */
+.counter-icon {
+    display: block;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+    line-height: 1;
+}
+.counter-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.counter-value {
+    display: block;
+    font-size: clamp(1.2rem, 3vw, 3rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 8px 0 4px;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    white-space: nowrap;
+}
+.counter-sub {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+/*----------------------------------------*/
+/*  6. PREFERENCE
+/*----------------------------------------*/
+#preference {
+    padding: 10px 0;
+    height: 100vh;
+}
+.preference-title,
+.preference-description {
+    text-align: center;
+}
+.card {
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+.card:hover {
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+.card-body {
+    padding-top: 20px;
+}
+.card i {
+    font-size: 25px;
+    padding: 5px;
+    margin: 0 auto;
+    text-align: center;
+}
+.card-title {
+    font-size: 20px;
+    font-weight: 300;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+.card-text {
+    transition: all 0.3s ease 0s;
+    text-align: center;
+    font-size: 14px;
+}
+/*----------------------------------------*/
+/*  7. GAMES
+/*----------------------------------------*/
+#games {
+    background-image: url("./img/games_banner.jpg");
+    display: flex; /* Делаем контейнер flex-контейнером */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+}
+.games-item {
+    text-align: center;
+    padding: 30px 20px;
+    /* Прозрачный фон (альфа-канал 0.3) */
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+.games-title, .games-description{
+    color: white;
+}
+.games-description{
+    font-weight: 400;
+    padding: 10px 0;
+}
+.games-button {
+    color: #fff;
+    transition: all 0.5s;
+    position: relative;
+    font-size: 22px;
+    border: 1px solid rgba(59, 59, 59, 0.2);
+}
+.games-button:hover {
+    color: #fff;
+}
+.games-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+.games-button:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+.games-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.2, 1.2);
+}
+.games-button:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+/*----------------------------------------*/
+/*  7.1 GAMES PAGE
+/*----------------------------------------*/
+#gameslist {
+    display: flex; /* Делаем контейнер flex-контейнером */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+}
+.gameslist-item {
+    text-align: center;
+    padding: 30px 20px;
+    /* Прозрачный фон (альфа-канал 0.3) */
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+.gameslist-title, .gameslist-description{
+    color: rgb(0, 0, 0);
+}
+.gameslist-description{
+    font-weight: 400;
+    padding: 10px 0;
+}
+/* Поисковая строка */
+.search-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.search-wrapper input {
+    border-radius: 30px;
+    padding-right: 45px;
+}
+.search-wrapper button {
+    border-radius: 0 30px 30px 0;
+    transition: color 0.3s;
+}
+.search-wrapper button:hover {
+    color: #0d6efd;
+}
+@media (max-width: 576px) {
+    .search-wrapper {
+        max-width: 100%;
+    }
+}
+/* Кнопки фильтра */
+.filter-buttons .btn {
+    margin: 5px;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.filter-buttons .btn.active {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+.filter-buttons .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Карточки игр */
+.game-card {
+    transition: all 0.4s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    cursor: pointer;
+}
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.game-card .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+.game-card .card-body {
+    padding: 1rem 1.2rem;
+}
+.game-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.game-card .card-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+.game-card.hidden {
+    display: none;
+}
+
+/* Модальное окно */
+#gameModal .modal-content {
+    border-radius: 20px;
+    padding: 0 10px;
+}
+#gameModal .modal-header {
+    position: relative;
+    padding-top: 20px;
+}
+#gameModal .btn-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 10;
+}
+#gameModal .modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+#gameModal .modal-body {
+    padding: 10px 20px 30px;
+}
+#gameModal .modal-body img {
+    max-height: 300px;
+    object-fit: contain;
+}
+.game-button {
+    color: #000000;
+    transition: all 0.5s;
+    position: relative;
+    font-size: 22px;
+    border: 1px solid rgba(59, 59, 59, 0.2);
+}
+.game-button:hover {
+    color: #121212;
+}
+.game-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+.game-button:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+.game-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    transform: scale(1.2, 1.2);
+}
+.game-button:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+#gameModal .btn-close:focus,
+#gameModal .btn-close:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+/* Адаптив для мобильных <720 */
+@media (max-width: 719.98px) {
+    #gameModal .modal-dialog {
+        margin: 10px;
+        max-width: 95%;
+    }
+    #gameModal .modal-body .row {
+        flex-direction: column-reverse; /* на мобильных: заголовок уже сверху, изображение идёт после заголовка, а текст после изображения */
+    }
+    #gameModal .modal-body .col-12.col-md-6:first-child {
+        order: 2; /* изображение идёт вторым (после текста) */
+    }
+    #gameModal .modal-body .col-12.col-md-6:last-child {
+        order: 1; 
+    }
+    #gameModal .modal-body img {
+        max-height: 200px;
+    }
+}
+/*----------------------------------------*/
+/*  8. PROJECTS
+/*----------------------------------------*/
+#projects {
+    padding: 20px 0;
+    height: 100vh;
+}
+.projects-title,
+.projects-description {
+    text-align: center;
+}
+.projects-card{
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    border-radius: 0px;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+.projects-card:hover {
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+.projects-card__image {
+    position: relative;
+    overflow: hidden;
+    max-height: 290px;
+}
+.projects-card__image:before {
+    background: transparent none repeat scroll 0 0;
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
+    width: 100%;
+    z-index: 1;
+}
+.projects-card__image > img {
+    filter: grayscale(20%);
+    width: 100%;
+    cursor: auto;
+}
+.projects-card__image--icon {
+    bottom: -40px;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    z-index: 99;
+    background: none 0px 0px repeat scroll rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+.projects-card:hover .projects-card__image--icon {
+    opacity: 1;
+    bottom: 0px;
+}
+.projects-card__image--icon > a {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    opacity: 0;
+    text-align: center;
+    visibility: hidden;
+    width: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    margin: 0px 5px;
+    text-decoration:none;
+}
+.projects-card__image--icon > a:hover {
+    border: 1px solid #fff;
+}
+.projects-card:hover .projects-card__image--icon > a {
+    opacity: 1;
+    visibility: visible;
+    text-decoration:none;
+    border: 0px solid;
+    cursor: pointer;
+}
+
+.projects-card:hover .projects-card__image:before {
+    background: rgba(33, 40, 45, 0.55) none repeat scroll 0 0;
+}
+.projects-card__title {
+    font-size: 20px;
+    font-weight: 300;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+.projects-card__text {
+    transition: all 0.3s ease 0s;
+    text-align: center;
+    font-size: 14px;
+}
+/*----------------------------------------*/
+/*  9. BOOK
+/*----------------------------------------*/
+#book {
+    background-image: url("./img/book_banner.jpg");
+    display: flex; /* Делаем контейнер flex-контейнером */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+}
+.book-item {
+    text-align: center;
+    padding: 30px 20px;
+    /* Прозрачный фон (альфа-канал 0.3) */
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+.book-title, .book-description{
+    color: white;
+}
+.book-description{
+    font-weight: 400;
+    padding: 10px 0;
+}
+.book-button {
+    color: #fff;
+    transition: all 0.5s;
+    position: relative;
+    font-size: 22px;
+    border: 1px solid rgba(59, 59, 59, 0.2);
+}
+.book-button:hover {
+    color: #fff;
+}
+.book-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+.book-button:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+.book-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.2, 1.2);
+}
+.book-button:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+/*----------------------------------------*/
+/*  10.CONTACTS
+/*----------------------------------------*/
+#contacts {
+    padding: 40px 0;
+    height: 60vh;
+    text-align: center;
+}
+.contacts-button {
+    color: #000000;
+    transition: all 0.5s;
+    position: relative;
+    font-size: 22px;
+    border: 1px solid rgba(59, 59, 59, 0.2);
+}
+.contacts-button:hover {
+    color: #121212;
+}
+.contacts-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+.contacts-button:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+.contacts-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    transform: scale(1.2, 1.2);
+}
+.contacts-button:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+/*----------------------------------------*/
+/*  11.FOOTER
+/*----------------------------------------*/
+footer{
+    background: rgb(17, 17, 17);
+    text-align: center;
+}
+.footer-top--logo {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+}
+.footer-top--logo:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: rgb(182,166,226); /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+.footer-top--logo:hover {
+    color: white;
+}
+.footer-top--logo:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px; /* Высота линии */
+    background-color: rgb(187,172,231); /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+.footer-bottom--link{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 30px;
+    line-height: 27px;
+    margin: 0 5px 10px 5px;
+    width: 30px;
+    color: #fff;
+}
+.footer-bottom > i {
+    display: block;
+    line-height: 28px;
+    font-size: 14px;
+}
+.footer-bottom--link:hover {
+    background-color: #fff;
+    color: #666;
+}
+.footer-bottom--copyright {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+.footer-bottom--copyright > a {
+    color: #fff;
+}
+.footer-bottom--copyright > a:hover {
+    text-decoration: underline;
+}
+.footer-bottom--artists {
+    font-size: 11px;
+    color: #fff;
+}
+.footer-bottom--artists > a{
+    color: white;
+    text-decoration: none;
+}
+.footer-bottom--artists > a:hover{
+    color: white;
+    text-decoration:underline;
+    cursor: pointer;
+}
+/*----------------------------------------*/
+/*  @MEDIA
+/*----------------------------------------*/
+@media (max-width: 1000px) {
+    .about__description {
+        line-height: 1.3;
+        padding: 0;
+        font-size: 14px;
+    }
+}
+@media (max-width: 1000px) and (min-width: 720px) {
+    /* CAROUSEL */
+    .carousel-item__caption {
+        top: 45%;
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}@media (max-width: 990px) {
+    /* PREFERENCE*/
+    .card-body {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 920px) and (min-width: 720px) {
+    /* CAROUSEL */
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: auto;
+        max-height: 450px;
+    }
+}
+@media (max-width: 769px) {
+    /* PREFERENCE*/
+    .card-body {
+        padding: 0px;
+    }
+    .card-text{
+        display: none;
+    }
+}
+@media (max-width: 720px) {
+    /* CAROUSEL */
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: auto;
+        max-height: 380px;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+    .carousel-item__caption {
+        top: 30%;
+    }
+    .carousel-item__title {
+        font-size: 40px;
+    }
+    .carousel-item__decription,
+    .carousel-item__button {
+        font-size: 14px;
+    }
+    /* PROJECTS*/
+    .projects-card__image--icon > a
+    {
+        font-size: 15px;
+        height: 30px;
+        line-height: 26px;
+        width: 30px;
+        margin: 0px 10px;
+    }
+}
+@media (max-width: 600px) {
+    /* CAROUSEL */
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: auto;
+        max-height: 280px;
+    }
+    .carousel-item__caption {
+        top: 15%;
+    }
+    /* INFO */
+    .counter-item{
+        padding:5px;
+    }
+    /* ABOUT */
+    #about,
+    #preference {
+        padding: 10px 0;
+    }
+}
+@media (max-width: 400px) {
+    /* CAROUSEL */
+    .carousel-indicators {
+        display: none;
+    }
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: auto;
+        max-height: 200px;
+    }
+    .carousel-item__title {
+        font-size: 14px;
+        margin: 0;
+    }
+    .carousel-item__decription,
+    .carousel-item__button {
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+    .carousel-item__caption {
+        top: 35%;
+    }
+    .about__image {
+        display: none;
+    }
+    /* INFO */
+    .counter-value {
+        font-size: clamp(1rem, 2.5vw, 1.8rem);
+    }
+    .counter-icon {
+        font-size: 1.6rem;
+    }
+}
