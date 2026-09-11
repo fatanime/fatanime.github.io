@@ -1028,6 +1028,25 @@ footer {
     .card-body {
         padding: 0px;
     }
+    .game_section {
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    /* 2. Секция-обёртка карусели (#main имеет и .section, и .game_section) —
+       снимаем 100vh, который тянется из общего правила */
+    section#main.game_section {
+        height: auto !important;
+        min-height: auto !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* 3. Блок контактов — компактнее */
+    #contacts.game_section {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 40px 0 !important;
+    }
 }
 
 @media (max-width: 920px) and (min-width: 720px) {
