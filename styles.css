@@ -1066,6 +1066,9 @@ footer {
     }
 }
 @media (max-width: 769px) {
+    .navbar{
+        position: relative;
+    }
     .carousel-control-prev,
     .carousel-control-next {
         display: none !important;
