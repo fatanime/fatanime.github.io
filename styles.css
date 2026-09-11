@@ -1014,6 +1014,13 @@ footer {
     }
 }
 @media (max-width: 990px) {
+    .bg-body-tertiary{
+        --bs-bg-opacity:1;
+        background-color: #000 !important;
+    }
+    .page.vertical{
+        display: none!important;
+    }
     .section {
         height: auto;
         min-height: 100vh;
