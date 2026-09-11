@@ -1040,6 +1040,10 @@ footer {
     }
 }
 @media (max-width: 769px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none !important;
+    }
     /* PREFERENCE*/
     .card-body {
         padding: 0px;
@@ -1048,7 +1052,7 @@ footer {
         display: none;
     }
     .about__image {
-        max-height: 50vh;      /* меньше, чтобы текст не убегал вниз */
+        max-height: 50vh; /* меньше, чтобы текст не убегал вниз */
         margin-bottom: 20px;
     }
     footer {
@@ -1065,10 +1069,7 @@ footer {
         height: auto;
         max-height: auto;
     }
-    .carousel-control-prev,
-    .carousel-control-next {
-        display: none;
-    }
+
     .carousel-item__caption {
         top: 30%;
     }
@@ -1086,6 +1087,38 @@ footer {
         line-height: 26px;
         width: 30px;
         margin: 0px 10px;
+    }
+    .section {
+        height: auto;
+        min-height: 100vh;
+    }
+    .fsscroll-nav,
+    .fsscroll-pagination,
+    .fs-scroll-nav,
+    .fs-scroll-pagination,
+    [class*="fsscroll"] > ul,
+    [class*="fs-scroll"] > ul,
+    nav[class*="fsscroll"] {
+        display: none !important;
+    }
+    #about,
+    #preference,
+    #projects,
+    #contacts {
+        height: auto;
+        min-height: auto;
+        padding: 60px 0;
+    }
+    /* Карусель на мобильных уже имеет свою высоту — у секции-обёртки её снимаем */
+    #main.section0 {
+        height: auto;
+        min-height: auto;
+    }
+    /* Футер — без растяжки */
+    footer {
+        min-height: auto !important;
+        padding: 40px 0 !important;
+        display: block !important;
     }
 }
 @media (max-width: 600px) {
