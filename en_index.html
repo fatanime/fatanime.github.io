@@ -5,18 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAT ANIME</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
-    <link rel="manifest" href="img/logo/site.webmanifest">
-    <link rel="mask-icon" href="img/logo/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -24,25 +12,6 @@
         media="all">
     <link href="./css/jquery.fsscroll.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(57597559, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true
-        });
-    </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/57597559" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -97,13 +66,13 @@
                 data-bs-touch="false" data-interval="3000" data-anchor="block1">
                 <!-- INDICATORS -->
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"
+                    <button type="button" data-bs-target="#Carousel" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"
+                    <button type="button" data-bs-target="#Carousel" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"
+                    <button type="button" data-bs-target="#Carousel" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"
+                    <button type="button" data-bs-target="#Carousel" data-bs-slide-to="3"
                         aria-label="Slide 4"></button>
                 </div>
 
@@ -148,11 +117,11 @@
                 </div>
 
                 <!-- CONTROL BUTTONS -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#main" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#main" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -162,14 +131,14 @@
             <section id="about" class="about section section1">
                 <div class="container py-5">
                     <div class="row g-4">
-                        <div class="col-8 col-md-6 col-lg-6">
+                        <div class="col-12 col-md-6 col-lg-6 order-2 order-md-1">
                             <h2 class="about__title">THE IDEA OF CREATION</h2>
                             <p class="about__description">More than ten years ago, on January 31, 2015, the group Fat Anime Girls Fan Group 16+ ™ was created.</p>
                             <p class="about__description">At that time, we were the first in the Russian segment of the internet to openly show that there is another kind of beauty – expressed in plumpness.</p>
                             <p class="about__description">In the first years we had few like‑minded people, but then more and more people began to join us. They were of different ages, from different countries and genders, and they felt the underlying idea.</p>
                             <p class="about__description">Every year our ranks grow, so if you are also a secret fan of big shapes – join us!</p>
                         </div>
-                        <div class="col-4 col-md-6 col-lg-6">
+                        <div class="col-12 col-md-6 col-lg-6 order-1 order-md-2 d-flex align-items-center justify-content-center">
                             <img class="img-fluid about__image" src="./img/oblozka_2026.jpg" />
                         </div>
                     </div>
@@ -313,7 +282,7 @@
                 </div>
                 <div class="container">
                     <div class="row g-4">
-                        <div class="col-4 col-md-4 col-lg-4">
+                        <div class="col-12 col-sm-6 col-md-4">
                             <div class="projects-card h-100">
                                 <div class="projects-card__body">
                                     <div class="projects-card__image">
@@ -330,7 +299,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 col-md-4 col-lg-4">
+                        <div class="col-12 col-sm-6 col-md-4">
                             <div class="projects-card h-100">
                                 <div class="projects-card__body">
                                     <div class="projects-card__image">
@@ -347,7 +316,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 col-md-4 col-lg-4">
+                        <div class="col-12 col-sm-6 col-md-4">
                             <div class="projects-card h-100">
                                 <div class="projects-card__body">
                                     <div class="projects-card__image">

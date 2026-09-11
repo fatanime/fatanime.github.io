@@ -27,6 +27,7 @@ span {
 .section {
     height: 100vh;
 }
+
 /*----------------------------------------*/
 /*  5. PRELOADER
 /*----------------------------------------*/
@@ -164,8 +165,8 @@ span {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
 }
-.navbar-menu__item-link:focus{
-    color:white;
+.navbar-menu__item-link:focus {
+    color: white;
 }
 .navbar-menu__item-link.active {
     color: white !important;
@@ -306,10 +307,29 @@ span {
     padding: 20px 0;
     height: 100vh;
 }
+.about__image {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* не обрезает, сохраняет пропорции */
+    display: block;
+    margin: 0 auto;
+}
 .about__description {
     line-height: 1.8;
     padding: 0 0 10px 0;
     font-size: 16px;
+}
+/*----------------------------------------*/
+/*  5,7,9. INFO, GAMES, BOOK
+/*----------------------------------------*/
+#info,
+#games,
+#book {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 /*----------------------------------------*/
 /*  5. INFO
@@ -420,10 +440,11 @@ span {
     transition: transform 0.3s ease;
     overflow: hidden;
 }
-.games-title, .games-description{
+.games-title,
+.games-description {
     color: white;
 }
-.games-description{
+.games-description {
     font-weight: 400;
     padding: 10px 0;
 }
@@ -484,10 +505,11 @@ span {
     transition: transform 0.3s ease;
     overflow: hidden;
 }
-.gameslist-title, .gameslist-description{
+.gameslist-title,
+.gameslist-description {
     color: rgb(0, 0, 0);
 }
-.gameslist-description{
+.gameslist-description {
     font-weight: 400;
     padding: 10px 0;
 }
@@ -534,7 +556,7 @@ span {
 .game-card {
     transition: all 0.4s ease;
     border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     overflow: hidden;
     height: 100%;
@@ -542,7 +564,7 @@ span {
 }
 .game-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 .game-card .card-img-top {
     width: 100%;
@@ -653,7 +675,7 @@ span {
         order: 2; /* изображение идёт вторым (после текста) */
     }
     #gameModal .modal-body .col-12.col-md-6:last-child {
-        order: 1; 
+        order: 1;
     }
     #gameModal .modal-body img {
         max-height: 200px;
@@ -670,7 +692,7 @@ span {
 .projects-description {
     text-align: center;
 }
-.projects-card{
+.projects-card {
     border: 1px solid rgba(0, 0, 0, 0.175);
     border-radius: 0px;
     transition: all 0.3s ease 0s;
@@ -733,7 +755,7 @@ span {
     border-color: transparent;
     border-image: initial;
     margin: 0px 5px;
-    text-decoration:none;
+    text-decoration: none;
 }
 .projects-card__image--icon > a:hover {
     border: 1px solid #fff;
@@ -741,7 +763,7 @@ span {
 .projects-card:hover .projects-card__image--icon > a {
     opacity: 1;
     visibility: visible;
-    text-decoration:none;
+    text-decoration: none;
     border: 0px solid;
     cursor: pointer;
 }
@@ -776,10 +798,11 @@ span {
     transition: transform 0.3s ease;
     overflow: hidden;
 }
-.book-title, .book-description{
+.book-title,
+.book-description {
     color: white;
 }
-.book-description{
+.book-description {
     font-weight: 400;
     padding: 10px 0;
 }
@@ -830,7 +853,8 @@ span {
 /*----------------------------------------*/
 #contacts {
     padding: 40px 0;
-    height: 60vh;
+    height: auto;
+    min-height: 40vh;
     text-align: center;
 }
 .contacts-button {
@@ -878,9 +902,12 @@ span {
 /*----------------------------------------*/
 /*  11.FOOTER
 /*----------------------------------------*/
-footer{
+footer {
     background: rgb(17, 17, 17);
     text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
 }
 .footer-top--logo {
     position: relative;
@@ -897,7 +924,11 @@ footer{
     bottom: -2px;
     width: 0;
     height: 2px; /* Высота линии */
-    background-color: rgb(182,166,226); /* Цвет подчеркивания при исчезании линии*/
+    background-color: rgb(
+        182,
+        166,
+        226
+    ); /* Цвет подчеркивания при исчезании линии*/
     transition: width 0.5s; /* Время эффекта */
 }
 .footer-top--logo:hover {
@@ -911,10 +942,14 @@ footer{
     left: 0;
     bottom: -2px;
     height: 2px; /* Высота линии */
-    background-color: rgb(187,172,231); /* Цвет подчеркивания при появлении линии*/
+    background-color: rgb(
+        187,
+        172,
+        231
+    ); /* Цвет подчеркивания при появлении линии*/
     transition: width 0.5s; /* Время эффекта */
 }
-.footer-bottom--link{
+.footer-bottom--link {
     border: 1px solid #fff;
     border-radius: 50%;
     display: inline-block;
@@ -948,13 +983,13 @@ footer{
     font-size: 11px;
     color: #fff;
 }
-.footer-bottom--artists > a{
+.footer-bottom--artists > a {
     color: white;
     text-decoration: none;
 }
-.footer-bottom--artists > a:hover{
+.footer-bottom--artists > a:hover {
     color: white;
-    text-decoration:underline;
+    text-decoration: underline;
     cursor: pointer;
 }
 /*----------------------------------------*/
@@ -977,7 +1012,18 @@ footer{
         height: 100%;
         object-fit: contain;
     }
-}@media (max-width: 990px) {
+}
+@media (max-width: 990px) {
+    .section {
+        height: auto;
+        min-height: 100vh;
+    }
+    #about,
+    #preference,
+    #projects {
+        height: auto;
+        min-height: 100vh;
+    }
     /* PREFERENCE*/
     .card-body {
         padding: 0px;
@@ -998,8 +1044,17 @@ footer{
     .card-body {
         padding: 0px;
     }
-    .card-text{
+    .card-text {
         display: none;
+    }
+    .about__image {
+        max-height: 50vh;      /* меньше, чтобы текст не убегал вниз */
+        margin-bottom: 20px;
+    }
+    footer {
+        min-height: auto;
+        padding: 40px 0;
+        display: block;
     }
 }
 @media (max-width: 720px) {
@@ -1008,7 +1063,7 @@ footer{
     .carousel-inner,
     .carousel-item {
         height: auto;
-        max-height: 380px;
+        max-height: auto;
     }
     .carousel-control-prev,
     .carousel-control-next {
@@ -1025,8 +1080,7 @@ footer{
         font-size: 14px;
     }
     /* PROJECTS*/
-    .projects-card__image--icon > a
-    {
+    .projects-card__image--icon > a {
         font-size: 15px;
         height: 30px;
         line-height: 26px;
@@ -1046,13 +1100,20 @@ footer{
         top: 15%;
     }
     /* INFO */
-    .counter-item{
-        padding:5px;
+    .counter-item {
+        padding: 15px 8px;
+    }
+    .counter-value {
+        font-size: clamp(1rem, 5vw, 1.8rem);
     }
     /* ABOUT */
     #about,
     #preference {
         padding: 10px 0;
+    }
+    #preference .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 @media (max-width: 400px) {

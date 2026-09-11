@@ -154,7 +154,7 @@ $(document).ready(function (menu_scroll__fixed) {
         direction: "vertical",
         duration: 350,
         keyboard: true,
-        responsiveWidth: 770 // при ширине < 770 fullpage отключается
+        responsiveWidth: 990 // при ширине < 770 fullpage отключается
     });
 
     // ---- Обновление меню после завершения анимации переключения секций ----
@@ -225,7 +225,7 @@ $(document).ready(function (menu_scroll__fixed) {
 // ========== ОБРАБОТЧИК СКРОЛЛА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ==========
 // Когда fullpage отключён (responsiveWidth), управляем классом через обычный скролл
 function handleScrollForMobile() {
-    var threshold = 770;
+    var threshold = 990;
     var isMobile = $(window).width() < threshold;
     if (isMobile) {
         if ($(window).scrollTop() > 100) {
